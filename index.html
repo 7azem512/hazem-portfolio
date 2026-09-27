@@ -4,14 +4,26 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Hazem Saed — Java Backend Developer specializing in Spring Boot, Microservices, Kafka, PostgreSQL, Redis, and Docker." />
+  <meta name="theme-color" content="#1E120D" />
+  
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Hazem Saed — Java Backend Developer" />
+  <meta property="og:description" content="Java Backend Developer specializing in Spring Boot, Microservices, Kafka, Redis, and Distributed Systems." />
+  <meta property="og:image" content="assets/hazem-saed.jpg" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23F15A24' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M17 8h1a4 4 0 1 1 0 8h-1'/%3E%3Cpath d='M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z'/%3E%3Cline x1='6' y1='2' x2='6' y2='4'/%3E%3Cline x1='10' y1='2' x2='10' y2='4'/%3E%3Cline x1='14' y1='2' x2='14' y2='4'/%3E%3C/svg%3E">
+
   <title>Hazem Saed — Java Backend Developer</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <div class="noise"></div>
+  <canvas id="canvas-bg"></canvas>
 
   <header class="site-header">
     <a class="brand" href="#top" aria-label="Hazem Saed home" style="display: inline-flex; align-items: center; gap: 6px;">
@@ -38,14 +50,7 @@
             <span class="ide-title">Hazem.java</span>
           </div>
           <div class="ide-content">
-<pre><code><span class="kw">public class</span> <span class="cl">Hazem</span> <span class="kw">implements</span> <span class="in">BackendDeveloper</span> {
-    <span class="kw">private</span> String <span class="vr">focus</span> = <span class="st">"Spring Boot & Microservices"</span>;
-
-    <span class="kw">public void</span> <span class="fn">buildSystems</span>() {
-        System.<span class="vr">out</span>.println(<span class="st">"Backend systems built to stay clean."</span>);
-        System.<span class="vr">out</span>.println(<span class="st">"Focusing on security and scale."</span>);
-    }
-}</code></pre>
+            <pre><code id="typewriter-code"></code><span class="cursor"></span></pre>
           </div>
         </div>
 
@@ -79,6 +84,7 @@
           KEYCLOAK <svg class="coffee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg>
           CLEAN ARCHITECTURE <svg class="coffee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg>
         </div>
+        <!-- Duplicate for infinite scroll -->
         <div class="marquee-item" aria-hidden="true">
           JAVA <svg class="coffee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg>
           SPRING BOOT <svg class="coffee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg>
@@ -94,153 +100,141 @@
     </section>
 
     <section id="work" class="section shell">
-      <div class="section-head">
+      <div class="section-head reveal">
         <p>02 / SELECTED WORK</p>
         <h2>Projects that show<br />how I think.</h2>
       </div>
 
-      <article class="project featured">
-        <div class="project-index">01</div>
-        <div class="project-main">
-          <div class="project-topline">
-            <h3>EventHub</h3>
-            <div class="project-actions">
-              <span>Distributed Platform</span>
-              <a class="repo-button" href="https://github.com/7azem512/EventHub" target="_blank" rel="noreferrer">View Repo ↗</a>
+      <div class="projects-grid">
+        <!-- 01 EventHub -->
+        <article class="project-card reveal">
+          <div class="project-index">01</div>
+          <div class="project-main">
+            <div class="project-topline">
+              <h3>EventHub</h3>
+              <div class="project-actions">
+                <span>Distributed Platform</span>
+                <a class="repo-button" href="https://github.com/7azem512/EventHub" target="_blank" rel="noreferrer">View Repo ↗</a>
+              </div>
+            </div>
+            <p class="project-lead">
+              A distributed event management and ticketing platform built with a microservices architecture.
+            </p>
+            <div class="project-details">
+              <div>
+                <span class="label">Challenge</span>
+                <p>Preventing ticket overselling under high concurrency and ensuring reliable communication across decoupled services without data inconsistency.</p>
+              </div>
+              <div>
+                <span class="label">What I built</span>
+                <p>Architected 5 decoupled microservices with database-per-service. Enforced zero overselling via Redis-backed atomic reservation holds. Implemented guaranteed event delivery with Apache Kafka and Outbox pattern. Added full observability.</p>
+              </div>
+            </div>
+            <div class="tags">
+              <span>Spring Cloud</span><span>Kafka</span><span>Redis</span><span>Keycloak</span><span>PostgreSQL</span><span>Docker</span>
             </div>
           </div>
-          <p class="project-lead">
-            A distributed event management and ticketing platform built with a microservices architecture.
-          </p>
-          <div class="project-grid">
-            <div>
-              <span class="label">Challenge</span>
-              <p>
-                Preventing ticket overselling under high concurrency and ensuring reliable communication across decoupled services without data inconsistency.
-              </p>
-            </div>
-            <div>
-              <span class="label">What I built</span>
-              <p>
-                Architected 5 decoupled microservices with database-per-service. Enforced zero overselling via Redis-backed atomic reservation holds. Implemented guaranteed event delivery with Apache Kafka and Outbox pattern. Added full observability with Prometheus, Grafana, and OpenTelemetry.
-              </p>
-            </div>
-          </div>
-          <div class="tags">
-            <span>Spring Cloud</span><span>Kafka</span><span>Redis</span>
-            <span>Keycloak</span><span>Microservices</span><span>Docker</span>
-          </div>
-        </div>
-      </article>
+        </article>
 
-      <article class="project">
-        <div class="project-index">02</div>
-        <div class="project-main">
-          <div class="project-topline">
-            <h3>FitLink</h3>
-            <div class="project-actions">
-              <span>Health & Coaching</span>
-              <a class="repo-button" href="https://github.com/7azem512/FitLink" target="_blank" rel="noreferrer">View Repo ↗</a>
+        <!-- 02 EduNest -->
+        <article class="project-card reveal">
+          <div class="project-index">02</div>
+          <div class="project-main">
+            <div class="project-topline">
+              <h3>EduNest</h3>
+              <div class="project-actions">
+                <span>Mentorship Platform</span>
+                <a class="repo-button" href="https://github.com/7azem512/EduNest" target="_blank" rel="noreferrer">View Repo ↗</a>
+              </div>
+            </div>
+            <p class="project-lead">
+              Backend for a mentorship and interactive learning platform with real-time communication.
+            </p>
+            <div class="project-details">
+              <div>
+                <span class="label">Scope</span>
+                <p>Built a full-scale engine supporting 6+ business domains including interactive quizzes, student submissions, project milestones, and automated certificate issuance.</p>
+              </div>
+              <div>
+                <span class="label">Engineering</span>
+                <p>Integrated real-time bidirectional WebSocket communication for mentor-learner discussions, secured endpoints using Spring Security with JWT/RBAC, and containerized with Docker.</p>
+              </div>
+            </div>
+            <div class="tags">
+              <span>Spring Boot</span><span>Spring Security</span><span>JWT</span><span>WebSocket</span><span>PostgreSQL</span><span>Docker</span>
             </div>
           </div>
-          <p class="project-lead">
-            A secure multi-role fitness platform backend connecting trainees, coaches, and gyms.
-          </p>
-          <div class="project-grid">
-            <div>
-              <span class="label">Challenge</span>
-              <p>
-                Build one backend that can safely support multiple user roles, robust authentication flows, and scalable profile management without turning the codebase into a mess.
-              </p>
-            </div>
-            <div>
-              <span class="label">What I built</span>
-              <p>
-                Enterprise authentication with JWT refresh-token rotation and OAuth2. Developed profile APIs with PostgreSQL/Redis persistence, S3-compatible cloud media uploads, rate limiting, and automated CI pipelines with GitHub Actions.
-              </p>
-            </div>
-          </div>
-          <div class="tags">
-            <span>Spring Boot</span><span>Spring Security</span><span>PostgreSQL</span>
-            <span>Redis</span><span>S3 Storage</span><span>GitHub Actions</span>
-          </div>
-        </div>
-      </article>
+        </article>
 
-      <article class="project">
-        <div class="project-index">03</div>
-        <div class="project-main">
-          <div class="project-topline">
-            <h3>EduNest</h3>
-            <div class="project-actions">
-              <span>Mentorship Platform</span>
-              <a class="repo-button" href="https://github.com/7azem512/EduNest" target="_blank" rel="noreferrer">View Repo ↗</a>
+        <!-- 03 FitLink -->
+        <article class="project-card reveal">
+          <div class="project-index">03</div>
+          <div class="project-main">
+            <div class="project-topline">
+              <h3>FitLink</h3>
+              <div class="project-actions">
+                <span>Health & Coaching</span>
+                <a class="repo-button" href="https://github.com/7azem512/FitLink" target="_blank" rel="noreferrer">View Repo ↗</a>
+              </div>
+            </div>
+            <p class="project-lead">
+              A secure multi-role fitness platform backend connecting trainees, coaches, and gyms.
+            </p>
+            <div class="project-details">
+              <div>
+                <span class="label">Challenge</span>
+                <p>Build one backend that can safely support multiple user roles, robust authentication flows, and scalable profile management without turning the codebase into a mess.</p>
+              </div>
+              <div>
+                <span class="label">What I built</span>
+                <p>Enterprise authentication with JWT refresh-token rotation and OAuth2. Developed profile APIs with PostgreSQL/Redis persistence, S3-compatible cloud media uploads, rate limiting, and automated CI pipelines with GitHub Actions.</p>
+              </div>
+            </div>
+            <div class="tags">
+              <span>Spring Boot</span><span>Spring Security</span><span>PostgreSQL</span><span>Redis</span><span>S3 Storage</span><span>GitHub Actions</span>
             </div>
           </div>
-          <p class="project-lead">
-            Backend for a mentorship and interactive learning platform with real-time communication.
-          </p>
-          <div class="project-grid">
-            <div>
-              <span class="label">Scope</span>
-              <p>
-                Built a full-scale engine supporting 6+ business domains including interactive quizzes, student submissions, project milestones, and automated certificate issuance.
-              </p>
-            </div>
-            <div>
-              <span class="label">Engineering</span>
-              <p>
-                Integrated real-time bidirectional WebSocket communication for mentor-learner discussions, secured endpoints using Spring Security with JWT/RBAC, and published interactive OpenAPI docs.
-              </p>
-            </div>
-          </div>
-          <div class="tags">
-            <span>Spring Boot</span><span>WebSocket</span><span>JWT</span><span>PostgreSQL</span><span>Docker</span>
-          </div>
-        </div>
-      </article>
+        </article>
 
-      <article class="project">
-        <div class="project-index">04</div>
-        <div class="project-main">
-          <div class="project-topline">
-            <h3>Bank API</h3>
-            <div class="project-actions">
-              <span>Banking Backend</span>
-              <a class="repo-button" href="https://github.com/7azem512/BankApi" target="_blank" rel="noreferrer">View Repo ↗</a>
+        <!-- 04 Bank API -->
+        <article class="project-card reveal">
+          <div class="project-index">04</div>
+          <div class="project-main">
+            <div class="project-topline">
+              <h3>Bank API</h3>
+              <div class="project-actions">
+                <span>Banking Engine</span>
+                <a class="repo-button" href="https://github.com/7azem512/BankApi" target="_blank" rel="noreferrer">View Repo ↗</a>
+              </div>
+            </div>
+            <p class="project-lead">
+              A core banking REST API focused on secure account operations and financial transactions.
+            </p>
+            <div class="project-details">
+              <div>
+                <span class="label">Core features</span>
+                <p>Account management, multi-account balances, atomic funds transfers, transactional audit histories, automated email alerts, and dynamic PDF bank statement generation.</p>
+              </div>
+              <div>
+                <span class="label">Engineering</span>
+                <p>Engineered an ACID-compliant service using Spring Security, JPA/Hibernate, MySQL, validation, and structured exception handling.</p>
+              </div>
+            </div>
+            <div class="tags">
+              <span>Spring Boot</span><span>Spring Security</span><span>JPA / Hibernate</span><span>MySQL</span><span>iText PDF</span><span>REST</span>
             </div>
           </div>
-          <p class="project-lead">
-            A core banking REST API focused on secure account operations and financial transactions.
-          </p>
-          <div class="project-grid">
-            <div>
-              <span class="label">Core features</span>
-              <p>
-                Account management, multi-account balances, atomic funds transfers, transactional audit histories, automated email alerts, and dynamic PDF bank-statement generation.
-              </p>
-            </div>
-            <div>
-              <span class="label">Engineering</span>
-              <p>
-                Engineered an ACID-compliant service using Spring Security, JPA/Hibernate, MySQL, validation, and structured exception handling.
-              </p>
-            </div>
-          </div>
-          <div class="tags">
-            <span>Spring Boot</span><span>JPA</span><span>MySQL</span><span>iText PDF</span><span>REST</span>
-          </div>
-        </div>
-      </article>
+        </article>
+      </div>
     </section>
 
     <section id="about" class="section section-dark">
       <div class="shell about-grid">
-        <div class="section-head light">
+        <div class="section-head light reveal">
           <p>03 / ABOUT</p>
           <h2>I care about the parts users never see.</h2>
         </div>
-        <div class="about-copy">
+        <div class="about-copy reveal delay-1">
           <p class="big-copy">
             Authentication flows. Error contracts. Data integrity. Clear boundaries.
             The backend details that make a product feel reliable.
@@ -263,49 +257,169 @@
     </section>
 
     <section id="stack" class="section shell">
-      <div class="section-head">
+      <div class="section-head reveal">
         <p>04 / TOOLKIT</p>
         <h2>What I work with.</h2>
       </div>
 
-      <div class="stack-grid">
-        <div class="stack-group">
-          <span>Core</span>
-          <h3>Java (17/21) · SQL · OOP · SOLID · Design Patterns</h3>
+      <div class="bento-grid">
+        <!-- 1. Microservices (Featured Large) -->
+        <div class="bento-item bento-large reveal">
+          <span class="bento-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="6" height="6" rx="1"/>
+              <rect x="16" y="2" width="6" height="6" rx="1"/>
+              <rect x="9" y="16" width="6" height="6" rx="1"/>
+              <path d="M5 8v3a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8"/>
+              <path d="M12 13v3"/>
+            </svg>
+          </span>
+          <h3>Microservices & Distributed Systems</h3>
+          <p class="bento-desc">Architecting decoupled, highly resilient services built for fault-tolerance, zero message loss, and horizontal scalability.</p>
+          <ul class="bento-features">
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Event-driven messaging & Transactional Outbox pattern via Kafka.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Dynamic routing, Eureka discovery, & Resilience4j circuit breakers.</span>
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              <span>Database-per-service pattern avoiding distributed state corruption.</span>
+            </li>
+          </ul>
+          <div class="arch-flow">
+            <div class="arch-node"><span class="arch-badge">Gateway</span>Spring Cloud</div>
+            <div class="arch-arrow">➔</div>
+            <div class="arch-node"><span class="arch-badge">Discovery</span>Eureka</div>
+            <div class="arch-arrow">➔</div>
+            <div class="arch-node"><span class="arch-badge">Broker</span>Kafka + Outbox</div>
+            <div class="arch-arrow">➔</div>
+            <div class="arch-node"><span class="arch-badge">Fault</span>Resilience4j</div>
+          </div>
+          <div class="bento-tags">
+            <span>Spring Cloud</span>
+            <span>Apache Kafka</span>
+            <span>Resilience4j</span>
+            <span>Gateway & Eureka</span>
+            <span>Outbox Pattern</span>
+            <span>Docker</span>
+          </div>
         </div>
-        <div class="stack-group">
-          <span>Microservices</span>
-          <h3>Spring Cloud · Apache Kafka · Resilience4j · Event-Driven</h3>
+        
+        <!-- 2. Core Backend -->
+        <div class="bento-item reveal delay-1">
+          <span class="bento-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"/>
+              <path d="m22 12.5-9.58 4.37a2 2 0 0 1-1.66 0L2 12.5"/>
+              <path d="m22 17.5-9.58 4.37a2 2 0 0 1-1.66 0L2 17.5"/>
+            </svg>
+          </span>
+          <h3>Core Backend & Architecture</h3>
+          <p class="bento-desc">Clean, layered architectures with strict adherence to SOLID principles, design patterns, and idiomatic modern Java.</p>
+          <div class="bento-tags">
+            <span>Java 17/21</span>
+            <span>Spring Boot 3</span>
+            <span>Spring MVC</span>
+            <span>JPA / Hibernate</span>
+            <span>Validation</span>
+            <span>AOP</span>
+          </div>
         </div>
-        <div class="stack-group">
-          <span>Backend</span>
-          <h3>Spring Boot · Spring MVC · JPA · Hibernate · Validation</h3>
+        
+        <!-- 3. Security -->
+        <div class="bento-item reveal delay-2">
+          <span class="bento-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
+              <path d="m9 12 2 2 4-4"/>
+            </svg>
+          </span>
+          <h3>Security & Identity (IAM)</h3>
+          <p class="bento-desc">Production-grade authentication protocols, fine-grained RBAC authorization, and hardened REST endpoints against zero-day threats.</p>
+          <div class="bento-tags">
+            <span>Keycloak</span>
+            <span>OAuth2 / OIDC</span>
+            <span>JWT Rotation</span>
+            <span>Spring Security</span>
+            <span>BCrypt</span>
+            <span>OTP Verification</span>
+          </div>
         </div>
-        <div class="stack-group">
-          <span>Security</span>
-          <h3>Keycloak · Spring Security · OAuth2 / OIDC · JWT · RBAC</h3>
+
+        <!-- 4. Data & Storage -->
+        <div class="bento-item reveal">
+          <span class="bento-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <ellipse cx="12" cy="5" rx="9" ry="3"/>
+              <path d="M3 5V19A9 3 0 0 0 21 19V5"/>
+              <path d="M3 12A9 3 0 0 0 21 12"/>
+            </svg>
+          </span>
+          <h3>Data Persistence & Caching</h3>
+          <p class="bento-desc">Relational ACID transactions, atomic lock execution preventing race conditions, and scalable S3-compatible cloud storage.</p>
+          <div class="bento-tags">
+            <span>PostgreSQL</span>
+            <span>MySQL</span>
+            <span>Redis (Atomic TTL)</span>
+            <span>MongoDB</span>
+            <span>MinIO (S3)</span>
+            <span>Flyway</span>
+          </div>
         </div>
-        <div class="stack-group">
-          <span>Data & Storage</span>
-          <h3>PostgreSQL · MySQL · Redis · MongoDB · MinIO (S3)</h3>
-        </div>
-        <div class="stack-group">
-          <span>DevOps & Observability</span>
-          <h3>Docker · GitHub Actions · Prometheus · Grafana · OpenTelemetry</h3>
+
+        <!-- 5. DevOps & Observability -->
+        <div class="bento-item reveal delay-1">
+          <span class="bento-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+            </svg>
+          </span>
+          <h3>DevOps, CI/CD & Observability</h3>
+          <p class="bento-desc">Automated build and testing pipelines, containerized orchestration, and full distributed tracing across microservice boundaries.</p>
+          <div class="bento-tags">
+            <span>Docker</span>
+            <span>Docker Compose</span>
+            <span>GitHub Actions (CI/CD)</span>
+            <span>Prometheus</span>
+            <span>Grafana</span>
+            <span>OpenTelemetry</span>
+            <span>Tempo</span>
+            <span>Swagger / OpenAPI</span>
+          </div>
         </div>
       </div>
     </section>
 
     <section id="contact" class="contact section-dark">
-      <div class="shell contact-inner">
+      <div class="shell contact-inner reveal">
         <p class="contact-kicker">05 / CONTACT</p>
         <h2>Have a backend problem<br />worth solving?</h2>
-        <a class="contact-email" href="mailto:hazemsaed512@gmail.com">hazemsaed512@gmail.com ↗</a>
+        <div class="contact-actions-row">
+          <div class="email-copy-wrap">
+            <button id="copy-email-btn" class="contact-email" aria-label="Copy email address" title="Click to copy email">
+              hazemsaed512@gmail.com
+              <svg class="copy-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+            </button>
+            <span id="copy-toast" class="copy-toast">Copied to clipboard! ✓</span>
+          </div>
+
+          <a class="whatsapp-btn" href="https://wa.me/201278485228" target="_blank" rel="noreferrer">
+            <svg class="wa-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+            </svg>
+            WhatsApp
+          </a>
+        </div>
         <div class="contact-bottom">
           <span>Hazem Saed · Java Backend Developer</span>
           <div>
             <a href="https://github.com/7azem512" target="_blank" rel="noreferrer">GitHub</a>
             <a href="https://linkedin.com/in/hazem-saed-36092525a" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="https://wa.me/201278485228" target="_blank" rel="noreferrer">WhatsApp</a>
             <a href="https://drive.google.com/drive/folders/1mhll8iOAFVdzQQ1HpDI4kMwrpl8SI6bU?usp=drive_link" target="_blank" rel="noreferrer">CV</a>
           </div>
         </div>
